@@ -20,7 +20,7 @@ def numberssum(namestring):
 
 domainlist = []
 testdomainlist=[]
-aaa=[]
+#fealist=[]
 class Domain:
     def __init__(self,_name,_label, _namelength, _numbers, _entropy):
         self.name = _name
@@ -78,8 +78,8 @@ for item in domainlist:
 clf = RandomForestClassifier(random_state=0)
 clf.fit(featureMatrix,labelList)
 for testitem in testdomainlist:
-    aaa=testitem.returnData()
-    taglable=clf.predict(aaa)
+    fealist=[testitem.namelength,testitem.numbers,testitem.entropy]
+    taglable=clf.predict(fealist)
     tag=str(taglable)
     tag1=tag.replace("'","")
     tag2=tag1.replace("[","")
