@@ -79,7 +79,7 @@ clf = RandomForestClassifier(random_state=0)
 clf.fit(featureMatrix,labelList)
 for testitem in testdomainlist:
     fealist=[testitem.namelength,testitem.numbers,testitem.entropy]
-    taglable=clf.predict(fealist)
+    taglable=clf.predict([fealist])
     tag=str(taglable)
     tag1=tag.replace("'","")
     tag2=tag1.replace("[","")
